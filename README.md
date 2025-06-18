@@ -21,7 +21,6 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
   * `{domain}`: target email domain
 * **Proxy Support**: Route traffic through an HTTP(S) proxy.
 * **CSV Export**: Save generated email list to a file.
-* **Verbose Mode**: Print detailed progress and parsed URLs.
 
 
 ## Installation
@@ -77,24 +76,51 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
 
 ## Examples
 
-1. **Basic run**
-
+ **Basic run**
    ```bash
-   ./crosslinked2.py  --company Company --domain company.com --pattern {f}{last}@{domain} -o test.csv -n 100 -s 30
-   ```
+   python3 crosslinked2.py  --company Tesla --domain tesla.com --pattern {f}{last}@{domain}
 
-2. **Multiple patterns + CSV export**
-
-   ```bash
-   ./crosslinked2.py \
-     --company "Acme Inc" \
-     --domain acme.com \
-     --pattern "{first}.{last}@{domain}" "{f}{last}@{domain}" \
-     --num 100 \
-     --sleep 30 \
-     --out output/emails.csv
-   ```
-
-
-
+   https://www.linkedin.com/in/roshant
+   https://www.linkedin.com/in/westbrookmorrill
+   https://www.linkedin.com/in/marcusroffey
+   https://www.linkedin.com/in/jaimej1
+   https://gr.linkedin.com/in/konstantinos-xanthopoulos-067a35140
+   https://gr.linkedin.com/in/bourchas
+   https://gr.linkedin.com/in/tesla-model-520280145
+   https://www.linkedin.com/in/timothyer
+   https://www.linkedin.com/in/eddie914
+   https://www.linkedin.com/in/matt-reddick-4a913411
+   https://gr.linkedin.com/in/konstantinos-deligiannis-9859b6202
+   https://gr.linkedin.com/in/stathis-laios-059a831a
+   https://www.linkedin.com/in/colinbreck
+   https://www.linkedin.com/in/nageshsaldi
+   https://www.linkedin.com/in/javier-verdura-4689521
+   https://www.linkedin.com/in/troyjones2
+   https://www.linkedin.com/in/konstantinos-gklantzounis
+   [snip]
+   https://gr.linkedin.com/in/maria-chamilaki
+   https://www.linkedin.com/in/eashokkumar
+   https://www.linkedin.com/in/kiranrak
+   https://gr.linkedin.com/in/giorgos-panagiotidis-287b94133
+ 
+   Generating emails from profiles...
+   
+   Total emails generated: 46
+   alexguion@tesla.com
+   asahota@tesla.com
+   astewart@tesla.com
+   bonneeggleston@tesla.com
+   bourchas@tesla.com
+   carlmoren@tesla.com
+   cemerino@tesla.com
+   colinbreck@tesla.com
+   dhavalshroff@tesla.com
+   dpriestley@tesla.com
+   [snip]
+   dtalkington@tesla.com
+   dylankim@tesla.com
+   eashokkumar@tesla.com
+   elafargue@tesla.com
+   elihammer@tesla.com
+```
 Use this tool responsibly and only against targets for which you have explicit permission. Unauthorized scraping of Google or LinkedIn profiles may violate their terms of service.
