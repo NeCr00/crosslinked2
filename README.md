@@ -1,4 +1,4 @@
-# crosslinked2
+# CrossLinked2
 
 **crosslinked2** is a command-line utility that automates the discovery of employee email addresses by:
 
