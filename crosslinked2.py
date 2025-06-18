@@ -25,8 +25,8 @@ parser.add_argument("-p", "--pattern", nargs='+',
 parser.add_argument("-n", "--num", type=int, default=50,
     help="Number of Google results to fetch (default: 50)"
 )
-parser.add_argument("-s", "--sleep", type=float, default=5,
-    help="Sleep between paged requests in seconds (default: 5)"
+parser.add_argument("-s", "--sleep", type=float, default=20,
+    help="Sleep between paged requests in seconds (default: 20)"
 )
 parser.add_argument("-x", "--proxy",
     help="HTTP(S) proxy URL (e.g., http://user:pass@host:port)"
