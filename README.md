@@ -51,29 +51,28 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
 
 ```bash
 ./crosslinked2.py \
-  --company "Navarino" \
-  --domain navarino.com \
-  --pattern "{first}.{last}@{domain}" "{f}{last}@{domain}" \
-  --results 100 \
-  --sleep 5 \
-  [--proxy http://user:pass@host:port] \
-  [--csv emails.csv] \
-  [--verbose]
+  -c <Company_Name> \
+  -d company.com \
+  -p "{first}.{last}@{domain}" "{f}{last}@{domain}" \
+  -r 100 \
+  -sleep 20 \
+  [-x http://user:pass@host:port] \
+  [-o emails.csv] \
+  
 ```
 
 ### Required Arguments
 
-* `--company` \<string>: Target company name (e.g., `Navarino`).
-* `--domain` \<string>: Email domain for permutations (e.g., `navarino.com`).
-* `--pattern` \<patterns>: One or more email patterns. Use placeholders `{first}`, `{last}`, `{f}`, `{domain}`.
+* `-c | --company` \<string>: Target company name (e.g., `Navarino`).
+* `-d | --domain` \<string>: Email domain for permutations (e.g., `navarino.com`).
+* `-p | --pattern` \<patterns>: One or more email patterns. Use placeholders `{first}`, `{last}`, `{f}`, `{domain}`.
 
 ### Optional Arguments
 
-* `--results` \<int>: Total number of Google results to fetch (default: 50).
-* `--sleep` \<float>: Seconds to wait between paged requests (default: 20).
-* `--proxy` \<URL>: HTTP(S) proxy URL.
-* `--csv` \<file>: Path to CSV file for saving emails.
-* `--verbose` : Enable detailed output.
+* `-r | --results` \<int>: Total number of Google results to fetch (default: 50).
+* `-s | --sleep` \<float>: Seconds to wait between paged requests (default: 20).
+* `-x | --proxy` \<URL>: HTTP(S) proxy URL.
+* `-o | --out` \<file>: Path to CSV file for saving emails.
 
 
 ## Examples
@@ -81,7 +80,7 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
 1. **Basic run**
 
    ```bash
-   ./crosslinked2.py --company "ExampleCorp" --domain example.com --pattern "{first}@{domain}" --results 30
+   ./crosslinked2.py  --company Company --domain company.com --pattern {f}{last}@{domain} -o test.csv -r 100 -s 30
    ```
 
 2. **Multiple patterns + CSV export**
@@ -92,9 +91,8 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
      --domain acme.com \
      --pattern "{first}.{last}@{domain}" "{f}{last}@{domain}" \
      --results 100 \
-     --sleep 4 \
-     --csv output/emails.csv \
-     --verbose
+     --sleep 30 \
+     --out output/emails.csv
    ```
 
 
