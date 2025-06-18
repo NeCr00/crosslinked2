@@ -54,7 +54,7 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
   -c <Company_Name> \
   -d company.com \
   -p "{first}.{last}@{domain}" "{f}{last}@{domain}" \
-  -r 100 \
+  -n 100 \
   -sleep 20 \
   [-x http://user:pass@host:port] \
   [-o emails.csv] \
@@ -69,7 +69,7 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
 
 ### Optional Arguments
 
-* `-r | --results` \<int>: Total number of Google results to fetch (default: 50).
+* `-n | --num` \<int>: Total number of Google results to fetch (default: 50).
 * `-s | --sleep` \<float>: Seconds to wait between paged requests (default: 20).
 * `-x | --proxy` \<URL>: HTTP(S) proxy URL.
 * `-o | --out` \<file>: Path to CSV file for saving emails.
@@ -80,7 +80,7 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
 1. **Basic run**
 
    ```bash
-   ./crosslinked2.py  --company Company --domain company.com --pattern {f}{last}@{domain} -o test.csv -r 100 -s 30
+   ./crosslinked2.py  --company Company --domain company.com --pattern {f}{last}@{domain} -o test.csv -n 100 -s 30
    ```
 
 2. **Multiple patterns + CSV export**
@@ -90,7 +90,7 @@ This tool mimics the behavior of the original **crosslinked** but is actively ma
      --company "Acme Inc" \
      --domain acme.com \
      --pattern "{first}.{last}@{domain}" "{f}{last}@{domain}" \
-     --results 100 \
+     --num 100 \
      --sleep 30 \
      --out output/emails.csv
    ```
